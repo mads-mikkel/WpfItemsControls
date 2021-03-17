@@ -41,5 +41,12 @@ namespace WpfItemsControls
             //p1.FirstName = "Jens";
             //s = p1.FullName();
         }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Person selectedPerson = listBox.SelectedItem as Person;
+            textBlock_Firstname.Text = selectedPerson.FirstName;
+            // ... osv. 
+        }
     }
 }

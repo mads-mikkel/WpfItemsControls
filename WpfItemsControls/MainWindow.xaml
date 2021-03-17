@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfItemsControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>        
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid>
         <Label Content="Fornavn:" />
-        <TextBlock Text="{Binding SelectedPerson.FirstName}"
-                   Margin="62,5,574,411" />
+        <TextBlock Margin="74,5,574,375"
+                   x:Name="textBlock_Firstname" />
         <ListBox Height="200"
                  Width="500"
                  ItemsSource="{Binding Persons}"
-                 SelectedItem="{Binding SelectedPerson}"/>
+                 SelectionChanged="ListBox_SelectionChanged"
+                 x:Name="listBox" />
     </Grid>
 </Window>
