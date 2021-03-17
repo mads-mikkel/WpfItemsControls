@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WpfItemsControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox Height="200"
-                 Width="500" 
-                 ItemsSource="{Binding Persons}"/>
+    <Grid>        
         <Label Content="Fornavn:" />
         <TextBlock Text="..."
                    Margin="62,5,574,411" />
+        <ListBox Height="200"
+                 Width="500"
+                 ItemsSource="{Binding Persons}" />
     </Grid>
 </Window>
