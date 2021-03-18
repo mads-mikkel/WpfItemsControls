@@ -13,21 +13,23 @@ namespace WpfItemsControls
     {        
         public ViewModel()
         {
-            Persons = new ObservableCollection<Person>(GetPersons());
+            Persons = new ObservableCollection<Person>();
+            LoadPersons();
         }
 
         public ObservableCollection<Person> Persons { get; set; }
         public Person SelectedPerson { get; set; }
 
 
-        public List<Person> GetPersons()
+        public void LoadPersons()
         {
-            List<Person> people = new List<Person>()
+            Repository repository = new Repository();
+            List<Person> people = repository.GetAllPersons();
+            Persons.Clear();
+            foreach(Person p in people)
             {
-                new Person() {FirstName = "Mads", LastName = "Rasmussen", Email = "mara@aspit.dk", PhoneNumber = "123"},
-                new Person() {FirstName = "Brian", LastName = "Jørgensen", Email = "brjo@aspit.dk", PhoneNumber = "456"}
-            };
-            return people;
+                Persons.Add(p);
+            }
         }
     }
 }
