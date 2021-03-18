@@ -9,28 +9,15 @@ using System.Threading.Tasks;
 
 namespace WpfItemsControls
 {
-    class ViewModel: INotifyPropertyChanged
-    {
-        private Person selectedPerson;
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
+    class ViewModel
+    {        
         public ViewModel()
         {
             Persons = new ObservableCollection<Person>(GetPersons());
         }
 
         public ObservableCollection<Person> Persons { get; set; }
-        public Person SelectedPerson
-        {
-            get => selectedPerson;
-            set
-            {
-                selectedPerson = value;
-                OnPropertyChanged(nameof(SelectedPerson));
-            }
-        }
+        public Person SelectedPerson { get; set; }
 
 
         public List<Person> GetPersons()
