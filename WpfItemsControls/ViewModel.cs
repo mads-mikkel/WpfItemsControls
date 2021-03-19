@@ -18,8 +18,6 @@ namespace WpfItemsControls
         }
 
         public ObservableCollection<Person> Persons { get; set; }
-        public Person SelectedPerson { get; set; }
-
 
         public void LoadPersons()
         {
